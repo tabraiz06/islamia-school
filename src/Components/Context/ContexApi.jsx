@@ -4,8 +4,9 @@ import { json } from "react-router-dom";
 const Context = createContext();
 const ContextProvider = ({ children }) => {
   const [selectedClass, setSelectedClass] = useState("1");
-  const [selectedSession, setSelectedSession] = useState("1st Terminal");
+  const [selectedSession, setSelectedSession] = useState("1ST TERMINAL");
   const [token, setToken] = useState(null);
+  const [loader, setLoader] = useState(false);
   
   
   const [editingResult, setEditingResult] = useState(null);
@@ -83,9 +84,13 @@ const ContextProvider = ({ children }) => {
         body: JSON.stringify({className, examSession})
       }
     );
+    setLoader(true)
     const result = await response.json();
-    console.log(result)
-    setResults(result);
+    if(response.ok){
+       setResults(result);
+       setLoader(false)
+    }
+   
   };
   // delete result 
   const deleteResult = async (id) => {
@@ -95,7 +100,7 @@ const ContextProvider = ({ children }) => {
       });
 
       if (response.ok) {
-        singleClassResult(selectedClass); // Refresh results after deletion
+        singleClassResult(selectedClass, selectedSession); // Refresh results after deletion
       }
     } catch (error) {
       console.error("Error deleting result:", error);
@@ -132,6 +137,8 @@ console.log(results)
         setSelectedSession,
         token,
         setToken,
+        loader,
+        setLoader
       }}
     >
       {children}

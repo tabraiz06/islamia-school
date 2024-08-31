@@ -4,7 +4,7 @@ const classOneSchema = mongoose.Schema({
   examSession: { type: String, require: true },
   studentName: { type: String, require: true },
   studentFatherName: { type: String, require: true },
-  studentRollNumber: { type: Number, required: true },
+  studentRollNumber: { type: String, required: true },
   marks: { type: Array, require: true },
   finalMarks: { type: String, require: true },
   totalMarks: { type: String, require: true },

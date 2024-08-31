@@ -43,13 +43,13 @@ function App() {
             />
             <Route
               path="/admission"
-              element={token ? <AdmissionForm /> : <Navigate to="/login" />}
+              element={ <AdmissionForm /> }
             />
             <Route
               path="/contacts"
               element={token ? <AdminContacts /> : <Navigate to="/login" />}
             />
-            <Route path="/admission/forms" element={<AdminViewAdmissions />} />
+            <Route path="/admission/forms" element={token ?<AdminViewAdmissions /> : <Navigate to="/login" />} />
           </Routes>
         </div>
 

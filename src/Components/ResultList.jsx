@@ -2,12 +2,14 @@
 import React, { useState } from "react";
 import ResultModal from "./ResultModal";
 import { contexApi } from "./Context/ContexApi";
+import Loader from "./Loader";
 
 
 const ResultList = () => {
   const [selectedResult, setSelectedResult] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-const { results, handleEditClick, deleteResult } = contexApi();
+const { results, handleEditClick, deleteResult, loader } = contexApi();
+console.log(loader)
 
   const handleViewClick = (result) => {
     setSelectedResult(result);
@@ -44,7 +46,8 @@ const { results, handleEditClick, deleteResult } = contexApi();
             </tr>
           </thead>
           <tbody>
-            {results.map((result) => (
+            {loader? <Loader/>:
+            results.map((result) => (
               <tr key={result._id} className="border-b">
                 <td className="py-4 px-6 text-gray-700">
                   {result.studentRollNumber}

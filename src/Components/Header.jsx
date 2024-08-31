@@ -9,7 +9,7 @@ const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 const Token= sessionStorage.getItem('token')
-console.log(Token)
+
 
 useEffect(()=>{
   setToken(!token)

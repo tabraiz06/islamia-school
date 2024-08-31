@@ -121,9 +121,9 @@ router.post("/singleresult", async (req, res) => {
   try {
     const singleStudentResult = await Class.findOne({
       studentRollNumber,
-      examSession,
+      examSession
     });
-
+    console.log(singleStudentResult);
     if (
       singleStudentResult.studentName !== studentName ||
       singleStudentResult.studentFatherName !== studentFatherName ||

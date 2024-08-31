@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const userRoute = require("./routes/userRoute");
 const classOneRoute = require("./routes/classOneResult");
-const admisssionRoute= require('./routes/admissionRoutes')
+const admisssionRoute = require("./routes/admissionRoutes");
 const contactRoutes = require("./routes/contact");
 const cors = require("cors");
 

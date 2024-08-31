@@ -1,8 +1,9 @@
 // src/components/Results.js
 import React from "react";
 
+
 const Results = ({ data }) => {
-  console.log(data);
+  
   if (!data || data.message === "invalid data") {
     return null; // Return nothing if there's no data
   }

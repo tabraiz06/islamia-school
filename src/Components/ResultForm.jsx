@@ -2,24 +2,38 @@
 import React, { useState, useEffect } from "react";
 import { contexApi } from "./Context/ContexApi";
 
-const ResultForm = ( ) => {
+const ResultForm = () => {
   const {
     handleAddOrUpdateResult,
     editingResult,
     selectedClass,
     selectedSession,
   } = contexApi();
-   const className =['Nursary', "LKG", 'UKG','1','2','3','4','5','6','7','8','9','10']
-const Session = ["1st Terminal", "2nd Terminal", "Final"];
+  const className = [
+    "Nursary",
+    "LKG",
+    "UKG",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ];
+  const Session = ["1st Terminal", "2nd Terminal", "Final"];
   const [formData, setFormData] = useState({
     studentName: "",
     studentFatherName: "",
     studentRollNumber: "",
-    className: selectedClass,
+    className: "",
     result: "",
     finalMarks: "",
     totalMarks: "",
-    examSession:selectedSession,
+    examSession: "",
     marks: [],
   });
 
@@ -62,7 +76,7 @@ const Session = ["1st Terminal", "2nd Terminal", "Final"];
       result: "",
       finalMarks: "",
       totalMarks: "",
-      examSession:"",
+      examSession: "",
       marks: [],
     });
   };
@@ -109,7 +123,7 @@ const Session = ["1st Terminal", "2nd Terminal", "Final"];
             Roll Number
           </label>
           <input
-            type="text"
+            type="tel"
             id="studentRollNumber"
             name="studentRollNumber"
             value={formData.studentRollNumber}
@@ -125,7 +139,6 @@ const Session = ["1st Terminal", "2nd Terminal", "Final"];
             type="text"
             id="name"
             name="className"
-            
             onChange={handleInputChange}
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             placeholder="Enter your name"
@@ -133,7 +146,7 @@ const Session = ["1st Terminal", "2nd Terminal", "Final"];
             <option value="">Slecet Class</option>
             {className.map((ele, i) => {
               return (
-                <option value={ele} key={i}>
+                <option value={ele.toUpperCase()} key={i}>
                   {ele}
                 </option>
               );
@@ -154,19 +167,18 @@ const Session = ["1st Terminal", "2nd Terminal", "Final"];
           />
         </div>
         <div>
-          <label htmlFor="className" className="block text-gray-700">
+          <label htmlFor="session" className="block text-gray-700">
             Session
           </label>
           <select
             type="text"
             id="name"
             name="examSession"
-            
             onChange={handleInputChange}
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             placeholder="Enter your name"
           >
-            <option value="">Slecet Class</option>
+            <option value="">Slecet Session</option>
             {Session.map((ele, i) => {
               return (
                 <option value={ele} key={i}>
