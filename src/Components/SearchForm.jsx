@@ -37,7 +37,7 @@ const Session = ["1st Terminal", "2nd Terminal", "Final"];
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md">
+    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md mt-8">
       <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">
         Search Your Result
       </h2>

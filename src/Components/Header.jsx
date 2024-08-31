@@ -1,7 +1,8 @@
 // src/components/Header.js
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { contexApi } from "./Context/ContexApi";
+import Logo from '../assets/islamia.gif'
 
 const Header = () => {
   const navigate=useNavigate()
@@ -86,10 +87,12 @@ useEffect(()=>{
   return (
     <header className="bg-white shadow-md py-4 fixed top-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center px-6">
-        <h1 className="text-3xl font-bold text-blue-600">
-          Islamia School <br />
-          <span>Mohlidih</span>
-        </h1>
+        <Link to={'/'}>
+
+        <img src={Logo} alt="islami-school" className="w-[100px]"/>
+        </Link>
+         
+        
 
         {/* Hamburger Icon for Mobile */}
         <div className="md:hidden">
@@ -122,9 +125,9 @@ useEffect(()=>{
         >
           <ul className="flex flex-col md:flex-row md:space-x-6 mt-4 md:mt-0">
             <li>
-              <Link to="/" className="text-gray-800 hover:text-blue-600">
+              <NavLink to="/" className="text-gray-800 hover:text-blue-600">
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="relative">
               <button
@@ -136,83 +139,83 @@ useEffect(()=>{
               {isDropdownOpen && (
                 <ul className="absolute bg-white shadow-lg rounded-lg py-2 mt-2">
                   <li>
-                    <Link
+                    <NavLink
                       to="/about"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                     >
                       History
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       href="#mission"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                     >
                       Mission & Vision
-                    </Link>
+                    </NavLink>
                   </li>
                 </ul>
               )}
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/courses"
                 className="text-gray-800 hover:text-blue-600"
               >
                 Courses
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/admission"
                 className="text-gray-800 hover:text-blue-600"
               >
                 Admissions
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/events"
                 className="text-gray-800 hover:text-blue-600"
               >
                 Events
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/result" className="text-gray-800 hover:text-blue-600">
+              <NavLink to="/result" className="text-gray-800 hover:text-blue-600">
                 Results
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/contact-us"
                 className="text-gray-800 hover:text-blue-600"
               >
                 Contact
-              </Link>
+              </NavLink>
             </li>
             {console.log(token)}
             {!token ? (
               <>
                 <li>
-                  <Link
+                  <NavLink
                     to="/admin"
                     className="text-gray-800 hover:text-blue-600"
                   >
                     Admin
-                  </Link>
+                  </NavLink>
                 </li>
                 <li onClick={handleLogout}>
-                  <Link to="" className="text-gray-800 hover:text-blue-600">
+                  <NavLink to="" className="text-gray-800 hover:text-blue-600">
                     Logout
-                  </Link>
+                  </NavLink>
                 </li>
               </>
             ) : (
               <li>
-                <Link to="/login" className="text-gray-800 hover:text-blue-600">
+                <NavLink to="/login" className="text-gray-800 hover:text-blue-600">
                   Login
-                </Link>
+                </NavLink>
               </li>
             )}
           </ul>
