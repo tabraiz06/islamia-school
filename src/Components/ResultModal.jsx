@@ -2,13 +2,12 @@
 import React from "react";
 
 const ResultModal = ({ result, onClose, onEdit, onDelete }) => {
-  
-  console.log(result)
+  console.log(result);
   if (!result) return null;
 
   return (
     <div className="fixed mt-[7rem] inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white w-3/4 md:w-1/2 lg:w-1/3 p-6 rounded-lg shadow-lg">
+      <div className="bg-white w-3/4 md:w-1/2 lg:w-1/3 p-6 rounded-lg shadow-lg h-[80vh] overflow-y-scroll">
         <h2 className="text-2xl font-bold mb-4">Student Result</h2>
 
         {/* Student Information Table */}
@@ -84,7 +83,7 @@ const ResultModal = ({ result, onClose, onEdit, onDelete }) => {
         {/* Action Buttons */}
         <div className="mt-6 flex justify-end space-x-4">
           <button
-            onClick={() => [onEdit(result),onClose()]}
+            onClick={() => [onEdit(result), onClose()]}
             className="px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700"
           >
             Edit
