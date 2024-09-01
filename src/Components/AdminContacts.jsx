@@ -44,7 +44,7 @@ const AdminContacts = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 mt-8">
       <h2 className="text-2xl font-bold mb-4">Contact Submissions</h2>
       <table className="w-full bg-white border border-gray-200 rounded-md shadow-md">
         <thead>
