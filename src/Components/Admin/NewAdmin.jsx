@@ -12,13 +12,16 @@ const NewAdmin = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:8080/api/auth/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newAdmin),
-    });
+    const response = await fetch(
+      "https://islamia-school-backend.vercel.app/api/auth/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newAdmin),
+      }
+    );
     const result = await response.json();
     console.log(result);
   };

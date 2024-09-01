@@ -17,7 +17,7 @@ const AdminViewAdmissions = () => {
   const fetchAdmissions = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/admissions/all"
+        "https://islamia-school-backend.vercel.app/api/admissions/all"
       );
       setAdmissions(response.data);
       setLoading(false);
@@ -29,7 +29,9 @@ const AdminViewAdmissions = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/api/admissions/delete/${id}`);
+      await axios.delete(
+        `https://islamia-school-backend.vercel.app/api/admissions/delete/${id}`
+      );
       setAdmissions(admissions.filter((admission) => admission._id !== id));
       alert("Admission record deleted successfully.");
     } catch (err) {

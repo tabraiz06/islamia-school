@@ -18,13 +18,16 @@ const Login = () => {
 
   const submit = async () => {
     try {
-      const res = await fetch("http://localhost:8080/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(login),
-      });
+      const res = await fetch(
+        "https://islamia-school-backend.vercel.app/api/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(login),
+        }
+      );
       const user = await res.json();
       if (res.ok) {
         sessionStorage.setItem("token", user.Token);

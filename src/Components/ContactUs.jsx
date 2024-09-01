@@ -30,13 +30,16 @@ const ContactUs = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await fetch("http://localhost:8080/api/contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
+        const response = await fetch(
+          "https://islamia-school-backend.vercel.app/api/contact",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
         if (response.ok) {
           setSuccess("Message sent successfully!");
           setFormData({

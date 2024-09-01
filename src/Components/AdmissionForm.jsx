@@ -31,22 +31,23 @@ const AdmissionForm = () => {
     });
   };
 
-  const handleSubmit =async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Here you can handle form submission, e.g., send the form data to a server or an API
     try {
-      const response = await fetch('http://localhost:8080/api/admissions/add', 
-         {
-             method: "POST",
-             headers: {
-               "Content-Type": "application/json",
-             },
-             body: JSON.stringify(formData),
-            }
+      const response = await fetch(
+        "https://islamia-school-backend.vercel.app/api/admissions/add",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
       );
-      const result= await response.json()
-     
-      if(response.ok){
+      const result = await response.json();
+
+      if (response.ok) {
         setFormData({
           studentName: "",
           fatherName: "",
@@ -56,17 +57,14 @@ const AdmissionForm = () => {
           email: "",
           address: "",
         });
-         alert(result.message);
-      }else{
+        alert(result.message);
+      } else {
         alert(result.message);
       }
-      
     } catch (error) {
-      alert('Error: ' + error.message);
+      alert("Error: " + error.message);
     }
     // Clear form data after submission
-    
-    
   };
 
   return (

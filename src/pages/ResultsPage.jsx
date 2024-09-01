@@ -11,18 +11,21 @@ const ResultsPage = () => {
 
   const handleSearch = async (searchCriteria) => {
     try {
-      const response = await fetch("http://localhost:8080/one/singleresult", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(searchCriteria),
-      });
+      const response = await fetch(
+        "https://islamia-school-backend.vercel.app/one/singleresult",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(searchCriteria),
+        }
+      );
       setLoader(true);
       const data = await response.json();
-      if(response.ok){
+      if (response.ok) {
         setSearchResults(data);
-        setLoader(false)
+        setLoader(false);
       }
     } catch (error) {
       console.error("Error fetching results:", error);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const AdminContacts = () => {
   const [contacts, setContacts] = useState([]);
@@ -7,11 +7,13 @@ const AdminContacts = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/contacts');
+        const response = await fetch(
+          "https://islamia-school-backend.vercel.app/api/contacts"
+        );
         const data = await response.json();
         setContacts(data);
       } catch (error) {
-        console.error('Error fetching contacts:', error);
+        console.error("Error fetching contacts:", error);
       }
     };
 
@@ -28,13 +30,16 @@ const AdminContacts = () => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:8080/api/contacts/${id}`, {
-        method: 'DELETE',
-      });
+      await fetch(
+        `https://islamia-school-backend.vercel.app/api/contacts/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       setContacts(contacts.filter((contact) => contact._id !== id));
       setSelectedContact(null);
     } catch (error) {
-      console.error('Error deleting contact:', error);
+      console.error("Error deleting contact:", error);
     }
   };
 
@@ -73,10 +78,18 @@ const AdminContacts = () => {
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-md shadow-md max-w-lg mx-auto">
             <h3 className="text-xl font-bold mb-4">Contact Details</h3>
-            <p><strong>Name:</strong> {selectedContact.name}</p>
-            <p><strong>Email:</strong> {selectedContact.email}</p>
-            <p><strong>Subject:</strong> {selectedContact.subject}</p>
-            <p><strong>Message:</strong> {selectedContact.message}</p>
+            <p>
+              <strong>Name:</strong> {selectedContact.name}
+            </p>
+            <p>
+              <strong>Email:</strong> {selectedContact.email}
+            </p>
+            <p>
+              <strong>Subject:</strong> {selectedContact.subject}
+            </p>
+            <p>
+              <strong>Message:</strong> {selectedContact.message}
+            </p>
             <div className="mt-4 flex justify-between">
               <button
                 onClick={() => handleDelete(selectedContact._id)}
