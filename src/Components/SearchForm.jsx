@@ -2,14 +2,13 @@
 import React, { useState } from "react";
 
 const SearchForm = ({ onSearch }) => {
-   
-const Session = ["1st Terminal", "2nd Terminal", "Final"];
+  const Session = ["1st Terminal", "2nd Terminal", "Final"];
   const [data, setData] = useState({
     className: "",
     studentName: "",
     studentFatherName: "",
     studentRollNumber: "",
-    examSession:""
+    examSession: "",
   });
 
   const className = [
@@ -37,7 +36,10 @@ const Session = ["1st Terminal", "2nd Terminal", "Final"];
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md mt-8">
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white p-6 rounded-lg shadow-md "
+    >
       <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">
         Search Your Result
       </h2>

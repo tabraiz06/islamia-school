@@ -28,7 +28,7 @@ function App() {
         <div className="head min-h-[9vh]">
           <Header />
         </div>
-        <div className="min-h-[96vh] mt-4 bg-gray-100">
+        <div className="min-h-[96vh] mt-8 bg-gray-100">
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<Login />} />
