@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const coursesData = [
   {
@@ -121,10 +122,15 @@ const Courses = () => {
               <h3 className="text-2xl font-bold mb-4">{course.className}</h3>
               <ul className="list-disc list-inside">
                 {course.subjects.map((subject, subIndex) => (
-                  <li key={subIndex} className="text-gray-600">
-                    {subject}
-                  </li>
+                  <>
+                    <li key={subIndex} className="text-gray-600">
+                      {subject}
+                    </li>
+                  </>
                 ))}
+                <Link to="/admission">
+                  <button className="p-4 bg-blue-600 m-4 rounded-md">Apply Now</button>
+                </Link>
               </ul>
             </div>
           ))}
