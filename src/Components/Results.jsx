@@ -45,16 +45,16 @@ const Results = ({ data }) => {
           <table className="min-w-full bg-white shadow-md rounded-lg">
             <thead>
               <tr>
-                <th className="py-3 px-6 bg-gray-200 text-left text-gray-800 text-sm uppercase font-bold">
+                <th className="py-3  bg-gray-200 text-left text-gray-800 text-sm uppercase font-bold">
                   Subject
                 </th>
-                <th className="py-3 px-6 bg-gray-200 text-left text-gray-800 text-sm uppercase font-bold">
+                <th className="py-3  bg-gray-200 text-left text-gray-800 text-sm uppercase font-bold">
                   Practical Marks
                 </th>
-                <th className="py-3 px-6 bg-gray-200 text-left text-gray-800 text-sm uppercase font-bold">
+                <th className="py-3  bg-gray-200 text-left text-gray-800 text-sm uppercase font-bold">
                   Theory Marks
                 </th>
-                <th className="py-3 px-6 bg-gray-200 text-left text-gray-800 text-sm uppercase font-bold">
+                <th className="py-3  bg-gray-200 text-left text-gray-800 text-sm uppercase font-bold">
                   Total Marks
                 </th>
               </tr>
@@ -62,14 +62,14 @@ const Results = ({ data }) => {
             <tbody>
               {data.marks.map((mark, index) => (
                 <tr key={index} className="border-b">
-                  <td className="py-4 px-6 text-gray-700">{mark.subject}</td>
-                  <td className="py-4 px-6 text-gray-700">
+                  <td className="py-4  text-gray-700">{mark.subject}</td>
+                  <td className="py-4  text-gray-700">
                     {mark.practicalMarks}
                   </td>
-                  <td className="py-4 px-6 text-gray-700">
+                  <td className="py-4  text-gray-700">
                     {mark.theoryMarks}
                   </td>
-                  <td className="py-4 px-6 text-gray-700">{mark.totalMarks}</td>
+                  <td className="py-4  text-gray-700">{mark.totalMarks}</td>
                 </tr>
               ))}
             </tbody>

@@ -120,7 +120,7 @@ const ContextProvider = ({ children }) => {
   }, []);
 
   // SINGLE CLASS RESULT
-  console.log(results);
+  
   return (
     <Context.Provider
       value={{

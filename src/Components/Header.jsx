@@ -86,13 +86,10 @@ useEffect(()=>{
 
   return (
     <header className="bg-white shadow-md py-4 fixed top-0 w-full z-50">
-      <div className="container mx-auto flex justify-between items-center px-6">
-        <Link to={'/'}>
-
-        <img src={Logo} alt="islami-school" className="w-[100px]"/>
+      <div className="container mx-auto flex justify-between items-center ">
+        <Link to={"/"}>
+          <img src={Logo} alt="islami-school" className="w-[100px]" />
         </Link>
-         
-        
 
         {/* Hamburger Icon for Mobile */}
         <div className="md:hidden">
@@ -124,12 +121,12 @@ useEffect(()=>{
           } md:block`}
         >
           <ul className="flex flex-col md:flex-row md:space-x-6 mt-4 md:mt-0">
-            <li>
+            <li className="p-4 hover:bg-blue-300 rounded">
               <NavLink to="/" className="text-gray-800 hover:text-blue-600">
                 Home
               </NavLink>
             </li>
-            <li className="relative">
+            <li className="relative p-4 hover:bg-blue-300 rounded">
               <button
                 className="text-gray-800 hover:text-blue-600 focus:outline-none"
                 onClick={handleDropdownToggle}
@@ -138,7 +135,7 @@ useEffect(()=>{
               </button>
               {isDropdownOpen && (
                 <ul className="absolute bg-white shadow-lg rounded-lg py-2 mt-2">
-                  <li>
+                  <li className="p-4 hover:bg-blue-300 rounded">
                     <NavLink
                       to="/about"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
@@ -146,9 +143,9 @@ useEffect(()=>{
                       History
                     </NavLink>
                   </li>
-                  <li>
+                  <li className="p-4 hover:bg-blue-300 rounded">
                     <NavLink
-                      href="#mission"
+                      to="/mission-vision"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                     >
                       Mission & Vision
@@ -157,7 +154,7 @@ useEffect(()=>{
                 </ul>
               )}
             </li>
-            <li>
+            <li className="p-4 hover:bg-blue-300 rounded">
               <NavLink
                 to="/courses"
                 className="text-gray-800 hover:text-blue-600"
@@ -165,7 +162,7 @@ useEffect(()=>{
                 Courses
               </NavLink>
             </li>
-            <li>
+            <li className="p-4 hover:bg-blue-300 rounded">
               <NavLink
                 to="/admission"
                 className="text-gray-800 hover:text-blue-600"
@@ -173,7 +170,7 @@ useEffect(()=>{
                 Admissions
               </NavLink>
             </li>
-            <li>
+            <li className="p-4 hover:bg-blue-300 rounded">
               <NavLink
                 to="/events"
                 className="text-gray-800 hover:text-blue-600"
@@ -181,12 +178,15 @@ useEffect(()=>{
                 Events
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/result" className="text-gray-800 hover:text-blue-600">
+            <li className="p-4 hover:bg-blue-300 rounded">
+              <NavLink
+                to="/result"
+                className="text-gray-800 hover:text-blue-600"
+              >
                 Results
               </NavLink>
             </li>
-            <li>
+            <li className="p-4 hover:bg-blue-300 rounded">
               <NavLink
                 to="/contact-us"
                 className="text-gray-800 hover:text-blue-600"
@@ -194,10 +194,18 @@ useEffect(()=>{
                 Contact
               </NavLink>
             </li>
-            {console.log(token)}
+            <li className="p-4 hover:bg-blue-300 rounded">
+              <NavLink
+                to="/gallery"
+                className="text-gray-800 hover:text-blue-600"
+              >
+                Gallery
+              </NavLink>
+            </li>
+
             {!token ? (
               <>
-                <li>
+                <li className="p-4 hover:bg-blue-300 rounded">
                   <NavLink
                     to="/admin"
                     className="text-gray-800 hover:text-blue-600"
@@ -205,15 +213,22 @@ useEffect(()=>{
                     Admin
                   </NavLink>
                 </li>
-                <li onClick={handleLogout}>
+
+                <li
+                  onClick={handleLogout}
+                  className="p-4 hover:bg-red-500 rounded"
+                >
                   <NavLink to="" className="text-gray-800 hover:text-blue-600">
                     Logout
                   </NavLink>
                 </li>
               </>
             ) : (
-              <li>
-                <NavLink to="/login" className="text-gray-800 hover:text-blue-600">
+              <li className="p-4 hover:bg-blue-600 rounded">
+                <NavLink
+                  to="/login"
+                  className="text-gray-800 hover:text-blue-600"
+                >
                   Login
                 </NavLink>
               </li>
