@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import AdminPannel from "./Components/Admin/AdminPannel";
 import NewAdmin from "./Components/Admin/NewAdmin";
 import Counter from "./Components/Assign";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import Login from "./Components/Login/Login";
 import Header from "./Components/Header";
