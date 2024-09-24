@@ -3,7 +3,7 @@ import React from "react";
 import img from '../assets/img1.jpeg'
 const About = () => {
   return (
-    <section id="about" className="py-16 bg-gray-100 h-[96vh]">
+    <section id="about" className="py-16 bg-gray-100 min-h-[96vh]">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-12">About Us</h2>
         <div className="flex flex-wrap text-justify ">
