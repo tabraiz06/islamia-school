@@ -1,8 +1,7 @@
 // src/components/Header.js
-        
 
 import React, { useState, useEffect } from "react";
-import logo from "../assets/islamia.gif"
+import logo from "../assets/islamia.gif";
 import { NavLink } from "react-router-dom";
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -109,12 +108,8 @@ const Header = () => {
           >
             Admissions
           </NavLink>
-          <NavLink
-            to="/events"
-            className="block py-2 px-4 hover:bg-gray-700"
-            onClick={toggleSidebar}
-          >
-            Events
+          <NavLink to="/gallery" className="block py-2 px-4 hover:bg-gray-700">
+            Gallery
           </NavLink>
           <NavLink
             to="/result"
