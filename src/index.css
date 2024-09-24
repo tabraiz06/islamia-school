@@ -21,3 +21,10 @@ table {
 nav{
   color: black;
 }
+.body{
+  background-image: url('./assets/islamiaLogo.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-blend-mode: lighten; */
+}

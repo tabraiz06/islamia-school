@@ -49,8 +49,8 @@ const Header = () => {
           <NavLink to="/admission" className="hover:text-yellow-500">
             Admissions
           </NavLink>
-          <NavLink to="/events" className="hover:text-yellow-500">
-            Events
+          <NavLink to="/gallery" className="hover:text-yellow-500">
+            Gallery
           </NavLink>
           <NavLink to="/result" className="hover:text-yellow-500">
             Results

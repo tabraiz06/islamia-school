@@ -2,8 +2,10 @@ import React from "react";
 
 // Import your image from the assets folder
 import developerImage from "../assets/tabraiz.jpg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  
   return (
     <footer className="bg-gray-800 text-white py-8">
       <div className="container mx-auto px-6">
@@ -33,43 +35,43 @@ const Footer = () => {
             <h3 className="text-2xl font-bold text-blue-400">Quick Links</h3>
             <ul className="mt-4">
               <li className="mt-2">
-                <a href="/" className="text-gray-400 hover:text-blue-300">
+                <Link href="/" className="text-gray-400 hover:text-blue-300">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="mt-2">
-                <a href="/about" className="text-gray-400 hover:text-blue-300">
+                <Link href="/about" className="text-gray-400 hover:text-blue-300">
                   About Us
-                </a>
+                </Link>
               </li>
               <li className="mt-2">
-                <a
+                <Link
                   href="/courses"
                   className="text-gray-400 hover:text-blue-300"
                 >
                   Courses
-                </a>
+                </Link>
               </li>
               <li className="mt-2">
-                <a
-                  href="/admissions"
+                <Link
+                  href="/admission"
                   className="text-gray-400 hover:text-blue-300"
                 >
                   Admissions
-                </a>
+                </Link>
               </li>
               <li className="mt-2">
-                <a
+                <Link
                   href="/contact"
                   className="text-gray-400 hover:text-blue-300"
                 >
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li className="mt-2">
-                <a href="/admin" className="text-gray-400 hover:text-blue-300">
+                <Link href="/admin" className="text-gray-400 hover:text-blue-300">
                   Admin
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
