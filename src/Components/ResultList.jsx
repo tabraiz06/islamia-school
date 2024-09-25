@@ -28,19 +28,19 @@ console.log(loader)
         <table className="min-w-full bg-white">
           <thead>
             <tr>
-              <th className="py-3 px-6 bg-gray-200 text-left text-gray-800 text-sm uppercase font-bold">
+              <th className="py-3 px-6 bg-gray-200  text-gray-800 text-sm uppercase font-bold">
                 Roll Number
               </th>
-              <th className="py-3 px-6 bg-gray-200 text-left text-gray-800 text-sm uppercase font-bold">
+              <th className="py-3 px-6 bg-gray-200  text-gray-800 text-sm uppercase font-bold">
                 Student Name
               </th>
-              <th className="py-3 px-6 bg-gray-200 text-left text-gray-800 text-sm uppercase font-bold">
+              <th className="py-3 px-6 bg-gray-200  text-gray-800 text-sm uppercase font-bold">
                 Class
               </th>
-              <th className="py-3 px-6 bg-gray-200 text-left text-gray-800 text-sm uppercase font-bold">
+              <th className="py-3 px-6 bg-gray-200  text-gray-800 text-sm uppercase font-bold">
                 Result
               </th>
-              <th className="py-3 px-6 bg-gray-200 text-left text-gray-800 text-sm uppercase font-bold">
+              <th className="py-3 px-6 bg-gray-200  text-gray-800 text-sm uppercase font-bold">
                 Actions
               </th>
             </tr>
