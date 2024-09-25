@@ -53,7 +53,7 @@ const AdminViewAdmissions = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="container mx-auto p-4 ">
+    <div className="container mx-auto p-4 mt-[3rem] ">
       <h2 className="text-2xl font-bold mb-4">Admissions List</h2>
       <table className="min-w-full bg-white border border-gray-300">
         <thead>
